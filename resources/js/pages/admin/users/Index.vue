@@ -9,7 +9,7 @@ import { usePermissions } from '@/composables/usePermissions';
 import { useConfirm } from '@/composables/useConfirm';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link, router } from '@inertiajs/vue3';
-import { Users as UsersIcon, Shield, Mail, Calendar, Filter, Search, Plus, MoreHorizontal, Pencil, Trash2, CheckCircle, XCircle } from 'lucide-vue-next';
+import { Users as UsersIcon, Calendar, Filter, Search, Plus, MoreHorizontal, Pencil, Trash2, CheckCircle, XCircle } from 'lucide-vue-next';
 import { ref } from 'vue';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import ExportButton from '@/components/ExportButton.vue';
@@ -405,8 +405,9 @@ const formatDate = (dateString: string) => {
                                         : 'bg-muted hover:bg-muted/80',
                                     !link.url && 'opacity-50 cursor-not-allowed',
                                 ]"
-                                v-html="link.label"
-                            />
+                            >
+                                <span v-html="link.label"></span>
+                            </Link>
                         </div>
                     </div>
                 </CardContent>

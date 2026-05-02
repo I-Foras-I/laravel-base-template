@@ -5,11 +5,10 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { usePermissions } from '@/composables/usePermissions';
 import { type BreadcrumbItem, type ActivityLog } from '@/types';
 import { Head, Link, router } from '@inertiajs/vue3';
 import { FileText, User, Calendar, Filter, Search, Eye } from 'lucide-vue-next';
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 
 interface Props {
     logs: {
@@ -29,7 +28,6 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-const { hasPermission } = usePermissions();
 
 const breadcrumbs: BreadcrumbItem[] = [
     { title: 'Dashboard', href: '/dashboard' },
@@ -328,8 +326,9 @@ const formatDate = (date: string) => {
                                         : 'bg-muted hover:bg-muted/80',
                                     !link.url && 'opacity-50 cursor-not-allowed',
                                 ]"
-                                v-html="link.label"
-                            />
+                            >
+                                <span v-html="link.label"></span>
+                            </Link>
                         </div>
                     </div>
                 </CardContent>

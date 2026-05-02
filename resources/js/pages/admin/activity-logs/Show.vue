@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { type BreadcrumbItem, type ActivityLog } from '@/types';
 import { Head, Link } from '@inertiajs/vue3';
-import { ArrowLeft, User, Calendar, FileText, Code } from 'lucide-vue-next';
+import { ArrowLeft, User, FileText, Code } from 'lucide-vue-next';
 
 interface Props {
     log: ActivityLog;

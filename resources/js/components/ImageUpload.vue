@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Upload, X } from 'lucide-vue-next';
 
-const props = defineProps<{
+defineProps<{
     modelValue?: File | null;
     currentImageUrl?: string;
     defaultInitials?: string;
